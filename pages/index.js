@@ -14,8 +14,8 @@ export default function Home(props) {
       body: JSON.stringify({ title, price, quantity })
     })
     const data = await resp.json()
-    if (resp.ok) setMessage(\`Created — product: \${data.product?.admin_graphql_api_id || data.product?.id} — DraftOrder: \${data.draftOrder?.id || 'n/a'}\`)
-    else setMessage(\`Error: \${JSON.stringify(data)}\`)
+    if (resp.ok) setMessage(`Created — product: ${data.product?.admin_graphql_api_id || data.product?.id} — DraftOrder: ${data.draftOrder?.id || 'n/a'}`)
+    else setMessage(`Error: ${JSON.stringify(data)}`)
   }
 
   return (
