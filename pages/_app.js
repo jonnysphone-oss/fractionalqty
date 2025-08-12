@@ -1,5 +1,5 @@
 import App from 'next/app'
-import { AppBridgeProvider } from '@shopify/app-bridge-react'
+import { Provider } from '@shopify/app-bridge-react'
 import { AppProvider as PolarisProvider } from '@shopify/polaris'
 import '@shopify/polaris/build/esm/styles.css'
 
