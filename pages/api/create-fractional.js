@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const token = await getAccessToken(shop)
   if (!token) return res.status(400).json({ error: 'app not installed for this shop yet' })
 
-  const productPayload = { product: { title: body.title || \`Fractional: \${Date.now()}\`, body_html: '<strong>Fractional</strong>', variants: [ { price: body.price || '1.00', sku: 'FRACT-' + Date.now() } ] } }
+  const productPayload = { product: { title: body.title || `Fractional: \${Date.now()}`, body_html: '<strong>Fractional</strong>', variants: [ { price: body.price || '1.00', sku: 'FRACT-' + Date.now() } ] } }
   const created = await shopifyRequest(shop, token, 'products.json', 'POST', productPayload)
   const productId = created?.product?.id
   const variantId = created?.product?.variants?.[0]?.id
